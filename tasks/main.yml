@@ -1,0 +1,21 @@
+---
+- name: Install ZSH packages
+  package:
+    name: "{{ zsh_packages }}"
+    state: present
+
+- name: Install oh-my-zsh
+  block:
+    - name: Create oh-my-zsh install directory
+      file:
+        path: "{{ zsh_oh_my_zsh_install_directory }}"
+        owner: "{{ zsh_oh_my_zsh_user }}"
+        group: "{{ zsh_oh_my_zsh_group }}"
+        mode: 0755
+        state: directory
+    - name: Clone oh-my-zsh repo
+      git:
+        repo: "{{ zsh_oh_my_zsh_source_uri }}"
+        version: "{{ zsh_oh_my_zsh_version }}"
+        dest: "{{ zsh_oh_my_zsh_install_directory }}"
+  when: zsh_install_oh_my_zsh

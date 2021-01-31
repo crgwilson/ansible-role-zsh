@@ -1,0 +1,11 @@
+---
+zsh_packages:
+  - zsh
+
+zsh_install_oh_my_zsh: false
+zsh_oh_my_zsh_user: root
+zsh_oh_my_zsh_group: root
+
+zsh_oh_my_zsh_source_uri: https://github.com/ohmyzsh/ohmyzsh.git
+zsh_oh_my_zsh_version: master
+zsh_oh_my_zsh_install_directory: /usr/local/oh-my-zsh

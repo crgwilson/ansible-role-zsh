@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  vars:
+    zsh_install_oh_my_zsh: true
+
+  roles:
+    - role: ansible-role-zsh
