@@ -1,5 +1,7 @@
 # Ansible role: zsh
 
+![Molecule Test](https://github.com/crgwilson/ansible-role-zsh/workflows/Molecule%20Test/badge.svg)
+
 Install [zsh](https://www.zsh.org/)
 
 * Install the requisite `zsh` package
