@@ -6,5 +6,16 @@
   vars:
     zsh_install_oh_my_zsh: true
 
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+      when: ansible_distribution == "Debian"
+
+    - name: Update yum cache
+      yum:
+        update_cache: true
+      when: ansible_distribution == "CentOS"
+
   roles:
     - role: ansible-role-zsh
